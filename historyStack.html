@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>History Trace</title>
+  <script type="text/javascript" src="linkedList.js"></script>
+  <script type="text/javascript" src="historyStack.js"></script>
+</head>
+<body>
+  <div>Input:</div>
+  <textarea id="notepad">Input Your Notes</textarea>
+  <div>
+    <button onclick="addNote(document.getElementById('notepad').value);">Save</button>
+    <button onclick="document.getElementById('notes').innerHTML = showNotes();">Show</button>
+  </div>
+  <div>Notes History:</div>
+  <div id="notes"></div>
+</body>
+</html>
