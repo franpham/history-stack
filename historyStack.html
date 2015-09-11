@@ -9,8 +9,8 @@
   <div>Input:</div>
   <textarea id="notepad">Input Your Notes</textarea>
   <div>
-    <button onclick="addNote(document.getElementById('notepad').value);">Save</button>
-    <button onclick="document.getElementById('notes').innerHTML = showNotes();">Show</button>
+    <button id="addNoteBtn" onclick="addNote()">Save</button>
+    <button id="showNotesBtn" onclick="showNotes()">Show</button>
   </div>
   <div>Notes History:</div>
   <div id="notes"></div>

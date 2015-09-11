@@ -39,7 +39,6 @@ function linkedListGenerator(){
     var node = createNode(val);
     if (head === null) {  // no nodes exist;
       head = tail = node;
-      current = node;
     } else {
       tail.next = node;   // link new node;
       tail = node;        // update tail;
@@ -72,17 +71,18 @@ function linkedListGenerator(){
   }
 
   function _insert(val, num) {
-    if (num > length - 1 || num < 0) {
-      return false;
-    }
-    else if (num === 0) {   // insert at head;
+    if (num === 0) {   // insert at head;
       var node = createNode(val);
       node.next = head;
       head = node;          // set new head;
       if (length === 0) {
         tail = node;
       }
-    } else {
+    }
+    else if (num > length - 1 || num < 0) {
+      return false;
+    }
+    else {
       var node = createNode(val);
       var prev = _get(num - 1);
       var next = _get(num);
@@ -94,7 +94,7 @@ function linkedListGenerator(){
   }
 
   function _reset() {
-    current = null;
+    current = head;
   }
 
   function _hasNext() {

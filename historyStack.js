@@ -1,15 +1,27 @@
-// import linkedListGenerator from './linkedList.js';
+var addNote = null;
+var showNotes = null;
 
-var linkedList = linkedListGenerator();
+// addNote && showNotes need to be in the global scope IF it's called directly by the button;
+window.onload = function() {
+  var linkedList = linkedListGenerator();
+  // var addNoteBtn = document.getElementById('addNoteBtn');
+  // addNoteBtn.addEventListener('click', addNote);
 
-function addNote(note) {
-  linkedList.insert(note, 0);
-}
+  // var showNotesBtn = document.getElementById('showNotesBtn');
+  // showNotesBtn.addEventListener('click', showNotes);
 
-function showNotes() {
-  var str = '';
-  while (linkedList.hasNext()) {
-    str += ('<div>' + linkedList.next() + '</div>');
+  addNote = function() {
+    var note = document.getElementById('notepad').value;
+    linkedList.insert(note, 0);
   }
-  return str;
-}
+
+  showNotes = function() {
+    var str = '';
+    linkedList.reset();
+    while (linkedList.hasNext()) {
+      str += ('<div>' + linkedList.next() + '</div>');
+    }
+    document.getElementById('notes').innerHTML = str;
+  }
+};
+
