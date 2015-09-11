@@ -1,9 +1,11 @@
 var addNote = null;
 var showNotes = null;
-
 // addNote && showNotes need to be in the global scope IF it's called directly by the button;
-window.onload = function() {
+
+// window.onload is not needed since these functions are not called until the page loaded;
+// window.onload = function() {
   var linkedList = linkedListGenerator();
+
   // var addNoteBtn = document.getElementById('addNoteBtn');
   // addNoteBtn.addEventListener('click', addNote);
 
@@ -13,6 +15,7 @@ window.onload = function() {
   addNote = function() {
     var note = document.getElementById('notepad').value;
     linkedList.insert(note, 0);
+    document.getElementById('output').innerHTML = note + ' was added';
   }
 
   showNotes = function() {
@@ -23,5 +26,5 @@ window.onload = function() {
     }
     document.getElementById('notes').innerHTML = str;
   }
-};
+// };
 

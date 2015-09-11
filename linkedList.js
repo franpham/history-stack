@@ -103,8 +103,8 @@ function linkedListGenerator(){
 
   function _next() {
     var temp = current;
-    current = current.next;
-    return temp.value;
+    current = current.next;   // set current to next;
+    return temp.value;        // returns current value;
   }
 
   return {
